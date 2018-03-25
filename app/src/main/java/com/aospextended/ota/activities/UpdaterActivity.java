@@ -1016,7 +1016,11 @@ public class UpdaterActivity extends PreferenceActivity implements
                     mActivityRef.get().mProgressDialog = null;
                 }
                 if (result) {
-                    mActivityRef.get().showInstallDialog(mUpdateInfo);
+                    if (Constants.CURRENT_DEVICE_NAME != "tissot") {
+                       mActivityRef.get().showInstallDialog(mUpdateInfo);
+                    } else {
+                       showToast(getString(R.string.update_manual_ab), Toast.LENGTH_LONG);
+                    }
                 } else {
 
                     new AlertDialog.Builder(mActivityRef.get())
@@ -1025,7 +1029,11 @@ public class UpdaterActivity extends PreferenceActivity implements
                             .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    mActivityRef.get().showInstallDialog(mUpdateInfo);
+                                    if (Constants.CURRENT_DEVICE_NAME != "tissot") {
+                                       mActivityRef.get().showInstallDialog(mUpdateInfo);
+                                    } else {
+                                       showToast(getString(R.string.update_manual_ab), Toast.LENGTH_LONG);
+                                    }
                                 }
                             })
                             .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
