@@ -5,7 +5,7 @@
         <item name="colorPrimary">@color/theme_primary</item>
         <item name="colorPrimaryDark">@color/theme_primary_dark</item>
         <item name="colorAccent">@color/theme_accent</item>
-        <item name="colorControlNormal">@color/theme_accent</item>
+        <item name="colorControlNormal">@color/text_primary</item>
         <item name="android:windowBackground">@color/theme_primary</item>
         <item name="android:textColorPrimary">@color/text_primary</item>
         <item name="android:textColorSecondary">@color/text_secondary</item>
@@ -44,6 +44,6 @@
 
     <style name="ToolbarTitle" parent="android:TextAppearance.Material.Title">
         <item name="android:fontFamily">google-sans-medium</item>
-        <item name="android:textColor">@color/theme_accent</item>
+        <item name="android:textColor">@color/text_primary</item>
     </style>
 </resources>
