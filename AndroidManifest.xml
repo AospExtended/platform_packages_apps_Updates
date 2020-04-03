@@ -22,6 +22,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:persistent="true"
+        android:usesCleartextTraffic="false"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".UpdatesActivity"
