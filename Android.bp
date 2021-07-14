@@ -1,0 +1,56 @@
+
+
+android_app {
+    name: "Updates",
+
+    srcs: ["src/**/*.java"],
+
+    static_libs: [
+        "gson",
+        "com.google.android.material_material",
+        "androidx.core_core",
+        "androidx.appcompat_appcompat",
+        "androidx.cardview_cardview",
+        "androidx.preference_preference",
+        "androidx.recyclerview_recyclerview",
+    ],
+
+    // ANDROIDMK TRANSLATION ERROR: unsupported assignment to LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES
+    // LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES := gson:libs/gson.jar
+
+    resource_dirs: ["res"],
+
+    platform_apis: true,
+    privileged: true,
+    certificate: "platform",
+    optimize: {
+        proguard_flags_files: ["proguard.flags"],
+    },
+
+    required: ["privapp_whitelist_com.aospextended.ota.xml"],
+
+}
+
+prebuilt_etc {
+    name: "privapp_whitelist_com.aospextended.ota.xml",
+
+    src: "privapp_whitelist_com.aospextended.ota.xml",
+    sub_dir: "permissions",
+
+}
+
+updater_system_deps = ["<func:'java-lib-deps' unset>"]
+updater_system_libs_path = ["__builtin_func:abspath <'LOCAL_PATH' unset>" + "/system_libs"]
+
+// ANDROIDMK TRANSLATION ERROR: unsupported include
+// include $(BUILD_SYSTEM)/base_rules.mk
+
+// ANDROIDMK TRANSLATION ERROR: unsupported line
+// rule:       $(LOCAL_BUILT_MODULE): $(updater_system_deps)
+// $(hide) mkdir -p $(updater_system_libs_path)
+// $(hide) rm -rf $(updater_system_libs_path)/*.jar
+// $(hide) cp $(updater_system_deps) $(updater_system_libs_path)/framework.jar
+// $(hide) echo "Fake: $@"
+// $(hide) mkdir -p $(dir $@)
+// $(hide) touch $@
+//
