@@ -8,7 +8,7 @@
     android:foreground="?attr/selectableItemBackground"
     android:nextFocusRight="@+id/update_action"
     app:cardBackgroundColor="@color/cardview_background"
-    app:cardCornerRadius="16dp"
+    app:cardCornerRadius="@dimen/card_round_corner"
     app:cardElevation="0dp"
     app:contentPaddingBottom="20dp"
     app:contentPaddingLeft="16dp"
